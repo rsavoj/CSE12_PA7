@@ -624,4 +624,8 @@ public class PublicTester {
             "tkE should be the same order of tk3", tkE.compareTo(tk3) == 0
         );
     }
+    /**
+     * javac -cp .:lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar PublicTester.java
+     * java -cp .:lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar org.junit.runner.JUnitCore PublicTester
+     */
 }

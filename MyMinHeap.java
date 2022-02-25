@@ -125,7 +125,7 @@ public class MyMinHeap<E extends Comparable<E>> implements MinHeapInterface <E>{
             return;
         }
         swap(index, child);
-        percolateDown(index);
+        percolateDown(child);
     }
     protected E deleteIndex(int index){
        E temp = data.get(index);
@@ -145,7 +145,10 @@ public class MyMinHeap<E extends Comparable<E>> implements MinHeapInterface <E>{
     }
     @Override
     public void insert(E element) {
-        
+        if(element == null){
+            throw new NullPointerException();
+            
+        }
         
     }
     @Override
