@@ -167,9 +167,30 @@ public class Ticket implements Comparable<Ticket>{
      */
     @Override
     public int compareTo(Ticket other){
-        //TODO: Your code
-        return 0;
+        setOrderMap(orderMap);
+        int compareTicketType = compareTickets(this, other);
+        int compareCreatedAt = this.createdAt.compareTo(other.createdAt);
+        if(compareTicketType == 0){
+            return compareCreatedAt;
+        }
+        return compareTicketType;
 
+    }
+
+    /**
+     * TODO: Method Header
+     */
+    private int compareTickets(Ticket ticket1, Ticket ticket2){
+       
+       int ticket1Value = orderMap.get(ticket1.ticketType);
+       int ticket2Value = orderMap.get(ticket2.ticketType);
+       if(ticket1Value == ticket2Value){
+           return 0;
+       }
+       else if(ticket1Value < ticket2Value){
+           return -1;
+       }
+       return 1;
     }
  
     
